@@ -70,7 +70,7 @@ body {
 
 .tabs {
   display: grid;
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 16px;
 }
 
@@ -196,6 +196,15 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.18);
   background: rgba(255, 255, 255, 0.8);
   font-family: inherit;
+}
+
+.field textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.8);
+  font-family: inherit;
+  resize: vertical;
 }
 
 @media (max-width: 1100px) {
@@ -423,6 +432,268 @@ body {
 
 .tap2-life-dot.is-today {
   background: rgba(255, 175, 50, 0.9);
+}
+
+.visionboard {
+  display: grid;
+  gap: 22px;
+}
+
+.visionboard-panel {
+  display: grid;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.visionboard-title {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.visionboard-subtitle {
+  margin: 0;
+  font-size: 16px;
+}
+
+.visionboard-form {
+  display: grid;
+  gap: 14px;
+}
+
+.visionboard-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.visionboard-progress-input {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.visionboard-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 22px;
+}
+
+.visionboard-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.visionboard-actions button,
+.visionboard-card-actions button,
+.visionboard-filter button {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.visionboard-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.visionboard-filter button.is-active {
+  background: rgba(255, 235, 178, 0.8);
+}
+
+.visionboard-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.visionboard-sort select {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  background: rgba(255, 255, 255, 0.9);
+  font-family: inherit;
+}
+
+.visionboard-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.visionboard-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.visionboard-card {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.08);
+}
+
+.visionboard-card h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.visionboard-card p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.5;
+}
+
+.visionboard-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.visionboard-card-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.visionboard-card-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.visionboard-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visionboard-progress-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.visionboard-progress-bar span {
+  display: block;
+  height: 100%;
+  background: rgba(255, 175, 50, 0.9);
+  border-radius: 999px;
+}
+
+.visionboard-thumb,
+.visionboard-image-preview {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  gap: 6px;
+  text-align: left;
+}
+
+.visionboard-thumb img,
+.visionboard-image-preview img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}
+
+.visionboard-image-preview span {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.visionboard-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.visionboard-empty {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.form-error {
+  margin: 0;
+  font-size: 12px;
+  color: #b7472a;
+}
+
+.visionboard-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.35);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 60;
+}
+
+.visionboard-modal-card {
+  display: grid;
+  gap: 12px;
+  width: min(720px, 92vw);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.visionboard-modal-card img {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.visionboard-close {
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  justify-self: end;
+}
+
+@media (max-width: 720px) {
+  .visionboard-row {
+    grid-template-columns: 1fr;
+  }
+
+  .visionboard-check {
+    margin-top: 0;
+  }
 }
 
 .tap2-modal {
