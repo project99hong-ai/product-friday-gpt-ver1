@@ -218,3 +218,286 @@ body {
     font-size: 14px;
   }
 }
+
+.tap2 {
+  display: grid;
+  gap: 28px;
+}
+
+.tap2-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.tap2-month {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+  font-family: "Caveat", "Nanum Brush Script", cursive;
+}
+
+.tap2-year {
+  margin: 4px 0 0;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.tap2-nav {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.tap2-nav button {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.tap2-layers {
+  min-width: 260px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tap2-label {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Caveat", "Nanum Brush Script", cursive;
+}
+
+.tap2-toggle-list {
+  display: grid;
+  gap: 8px;
+}
+
+.tap2-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.tap2-toggle input {
+  accent-color: #2b2b2b;
+}
+
+.tap2-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.tap2-weekday {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  padding-left: 4px;
+}
+
+.tap2-day {
+  min-height: 120px;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  position: relative;
+  display: grid;
+  gap: 6px;
+}
+
+.tap2-day--empty {
+  background: transparent;
+  border: none;
+}
+
+.tap2-day.is-today {
+  border-color: rgba(255, 175, 50, 0.7);
+  box-shadow: 0 8px 16px rgba(255, 175, 50, 0.15);
+}
+
+.tap2-date {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tap2-events {
+  display: grid;
+  gap: 6px;
+}
+
+.tap2-event {
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.75);
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.tap2-event:hover {
+  transform: translateX(2px);
+}
+
+.tap2-event em {
+  margin-left: 6px;
+  font-style: normal;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.tap2-life {
+  display: grid;
+  gap: 10px;
+}
+
+.tap2-upcoming {
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.tap2-upcoming-list {
+  display: grid;
+  gap: 8px;
+}
+
+.tap2-upcoming .tap2-event {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.tap2-upcoming .tap2-event em {
+  display: block;
+  margin: 4px 0 0;
+}
+
+.tap2-life-note {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.tap2-life-grid {
+  display: grid;
+  grid-template-columns: repeat(53, 1fr);
+  gap: 4px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tap2-life-dot {
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.tap2-life-dot.is-past {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.tap2-life-dot.is-today {
+  background: rgba(255, 175, 50, 0.9);
+}
+
+.tap2-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.3);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 50;
+}
+
+.tap2-modal-card {
+  width: min(520px, 92vw);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.tap2-modal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.tap2-modal-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tap2-modal-date,
+.tap2-modal-detail {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.tap2-close {
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.tap2-modal textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 1100px) {
+  .tap2-calendar {
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .tap2-calendar {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+
+  .tap2-life-grid {
+    grid-template-columns: repeat(26, 1fr);
+  }
+}
