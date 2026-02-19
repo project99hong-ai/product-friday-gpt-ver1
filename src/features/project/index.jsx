@@ -96,7 +96,17 @@ const baseEvents = [
 
 const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-const formatISO = (date) => date.toISOString().slice(0, 10);
+const formatISO = (date) => {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+};
+
+const parseISODate = (value) => {
+  const [y, m, d] = value.split("-").map(Number);
+  return new Date(y, m - 1, d);
+};
 
 const buildDays = (monthDate) => {
   const days = [];
@@ -129,8 +139,8 @@ const useEventsByDay = (events, monthDate) => {
     const map = new Map();
 
     events.forEach((event) => {
-      const start = new Date(event.start);
-      const end = new Date(event.end);
+      const start = parseISODate(event.start);
+      const end = parseISODate(event.end);
 
       if (event.pin === "month-start") {
         if (end < monthStart || start > monthEnd) return;
@@ -200,8 +210,8 @@ export const tap = {
     const { totalDays, dayOfYear } = useLifeCalendar();
 
     const outOfMonthEvents = visibleEvents
-      .filter((event) => new Date(event.start) > monthEnd)
-      .sort((a, b) => new Date(a.start) - new Date(b.start))
+      .filter((event) => parseISODate(event.start) > monthEnd)
+      .sort((a, b) => parseISODate(a.start) - parseISODate(b.start))
       .slice(0, 4);
 
     const toggleLayer = (id) => {
